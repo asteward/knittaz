@@ -22,9 +22,9 @@
               <li class="divider"></li>
               <li><%= link_to "Become a Knittah 4 Life", new_user_registration_path %></li>
             <% else %>
-              <li>My Yarns</li>
+              <li><%= link_to "My Yarns", "/" %></li>
               <li class="divider"></li>
-              <li><%= link_to "Logout", destroy_user_session %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
             <% end %>
           </ul>
         </li>
