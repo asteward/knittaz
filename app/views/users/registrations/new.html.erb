@@ -7,10 +7,10 @@
   <%= f.email_field :email, autofocus: true, placeholder: "jackson@email.com"  %></div>
 
   <div><%= f.label :name %><br />
-    <%= f.password_field :name, autocomplete: "off", placeholder: "Jackson" %></div>
+    <%= f.text_field :name, autocomplete: "off", placeholder: "Jackson" %></div>
 
     <div><%= f.label :handle %><br />
-      <%= f.password_field :handle, autocomplete: "off", placeholder: "#knittahswag" %></div>
+      <%= f.text_field :handle, autocomplete: "off", placeholder: "#knittahswag" %></div>
 
   <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
