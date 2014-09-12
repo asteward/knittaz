@@ -16,3 +16,14 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image: url('yarn.jpg');
+  text-align: center;
+}
+
+#home-btn {
+  font-size: 400%;
+  padding: 30px;
+  width: 100%;
+}
