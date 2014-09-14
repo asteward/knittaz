@@ -11,7 +11,7 @@
 <hr>
 <% if @user %>
   <div id="all_posts">
-    <h3>yarns</h3>
+    <h3>- yarns -</h3>
     <% @user.posts.each do |post| %>
       <p><%= @user.name %> - <%= post.text %> <span class="yarn_time"><%= post.created_at.strftime("(%m/%d/%Y - %I:%M%p)") %></span></p>
     <% end %>
