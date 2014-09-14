@@ -1,6 +1,7 @@
-<h1 class="home-h1">Welcome, Fellow Knittaz!</h1>
 <% if current_user %>
+  <h1 class="home-h1">Welcome, <%= current_user.name %>!</h1>
   <%= link_to "Ready to spin some yarns?", "/", class: "btn btn-info", id: "home-btn" %>
 <% else %>
+  <h1 class="home-h1">Welcome, Fellow Knittaz!</h1>
   <%= link_to "Do you love to knit?", new_user_registration_path, class: "btn btn-info", id: "home-btn" %>
 <% end %>
