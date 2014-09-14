@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def search
     @search_text = params[:search_term]
-    @search_results = User.basic_search(@search_text)
+    @search_results = User.fuzzy_search(name: @search_text)
     render('search/results.html.erb')
   end
 end
