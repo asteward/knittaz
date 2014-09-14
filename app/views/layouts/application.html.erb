@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Knittaz 4 Life</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="bg-img">
-    <%= render('layouts/navbar') %>
-    <% if flash[:notice] %>
-      <div class="alert alert-info" role="alert">
-        <%= flash[:notice].html_safe %>
+  <head>
+    <title>Knittaz 4 Life</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="bg-img">
+      <%= render('layouts/navbar') %>
+      <% if flash[:notice] %>
+        <div class="alert alert-info" role="alert">
+          <%= flash[:notice].html_safe %>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash[:alert].html_safe %>
+        </div>
+      <% end %>
+      <div class="container">
+        <%= yield %>
       </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert alert-danger" role="alert">
-        <%= flash[:alert].html_safe %>
-      </div>
-    <% end %>
-    <div class="container">
-      <%= yield %>
     </div>
-  </div>
-</body>
+  </body>
 </html>
