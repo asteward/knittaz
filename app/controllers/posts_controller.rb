@@ -19,7 +19,6 @@ class PostsController < ApplicationController
       @tagged_users.reject!(&:blank?)
       @tagged_users.each { |user| UserMailer.tag_confirmation(user, @user).deliver }
     else
-      flash.now.alert = "<strong>'Ey!</strong> Check dat again, mon."
       render 'new'
     end
   end
