@@ -7,19 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render('layouts/navbar') %>
-  <% if flash[:notice] %>
-    <div class="alert alert-success" role="alert">
-      <%= flash[:notice].html_safe %>
+  <div class="bg-img">
+    <%= render('layouts/navbar') %>
+    <% if flash[:notice] %>
+      <div class="alert alert-info" role="alert">
+        <%= flash[:notice].html_safe %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:alert].html_safe %>
+      </div>
+    <% end %>
+    <div class="container">
+      <%= yield %>
     </div>
-  <% end %>
-  <% if flash[:alert] %>
-    <div class="alert alert-danger" role="alert">
-      <%= flash[:alert].html_safe %>
-    </div>
-  <% end %>
-  <div class="container">
-    <%= yield %>
   </div>
 </body>
 </html>
