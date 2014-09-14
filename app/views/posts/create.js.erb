@@ -1,0 +1,3 @@
+$('form').hide()
+$('#new_post').show();
+$('#all_posts').append("<p><%= j @user.name %> - <%= j @post.text %></p>")
