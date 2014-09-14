@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :followers
   end
 
+  match('/search', { :via => :get, :to => 'users#search' } )
+
 end

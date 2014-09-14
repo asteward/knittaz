@@ -1,0 +1,10 @@
+<div class = "form-background">
+  <h1>Search results for: <%= @search_text %></h1>
+
+  <ul>
+    <% @search_results.order(:name).each do |result| %>
+      <li> <%= result.name %> - <%= link_to result.handle, user_path(result) %></li>
+    <% end %>
+  </ul>
+
+</div>
