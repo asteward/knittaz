@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'autoprefixer-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
+gem 'textacular', '~> 3.0'
 
 group :development do
   gem 'better_errors'
