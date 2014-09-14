@@ -1,0 +1,24 @@
+<h1> <%= @user.name %><span class="handle">(<%= @user.handle %>)</span></h1>
+<% if @current_user && @user != @current_user %>
+  <div id="following">
+    <% if @user.followers.find_by(follower_id: @current_user.id) %>
+      <%= link_to "unfollow", user_follower_path(@user, @user.followers.find_by(follower_id: @current_user.id)), id: "unfollow", method: 'delete', class: "btn btn-danger btn-sm", remote: true %>
+    <% else %>
+      <%= link_to "follow", user_followers_path(@user), class: "btn btn-info btn-sm", id: "follow", method: 'post',  remote: true %>
+    <% end %>
+  </div>
+<% end %>
+<hr>
+<% if @user %>
+  <div id="all_posts">
+    <h3>yarns</h3>
+    <% @user.posts.each do |post| %>
+      <p><%= @user.name %> - <%= post.text %> <span class="yarn_time"><%= post.created_at.strftime("(%m/%d/%Y - %I:%M%p)") %></span></p>
+    <% end %>
+  </div>
+  <% if @current_user == @user %>
+    <div id="new_post">
+      <%= link_to "spin a new yarn", new_user_post_path(@user), class: "btn btn-success", id: "post_link", remote: true %>
+    </div>
+  <% end %>
+<% end %>

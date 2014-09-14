@@ -1,3 +1,3 @@
 $('form').hide()
 $('#new_post').show();
-$('#all_posts').append("<p><%= j @user.name %> - <%= j @post.text %></p>")
+$('#all_posts').append('<p><%= @user.name %> - <%= @post.text %> <span class="yarn_time"><%= @post.created_at.strftime("(%m/%d/%Y - %I:%M%p)") %></span></p>')
