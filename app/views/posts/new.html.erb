@@ -1,7 +1,7 @@
 <%= form_for [@user, @post], remote: true do |f| %>
   <div class="form-group">
     <%= f.label :text, "Spin Yarn Here =>" %>
-    <%= f.text_field :text %>
+    <%= f.text_field :text, placeholder: "Yarn spinning..." %>
   </div>
-  <%= f.submit "spin yarn", :class => "btn btn-primary", :id => "yarn", placeholder: "Yarn spinning..." %>
+  <%= f.submit "spin yarn", :class => "btn btn-primary", :id => "yarn" %>
 <% end %>
