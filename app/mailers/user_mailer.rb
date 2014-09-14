@@ -13,7 +13,7 @@ class UserMailer < ActionMailer::Base
     mail to: user.email, subject: "Congratulations on becoming a Knittah 4 Life, #{@user.name}!"
   end
 
-  def stitch_confirmation(user, tagger)
+  def tag_confirmation(user, tagger)
     @user = user
     @greeting = "#{user.name} - You have been stitched by #{tagger.name}!!! MUHUHAHAHAHAHAHAHAHAHAHAHA!!!! >;P"
 
