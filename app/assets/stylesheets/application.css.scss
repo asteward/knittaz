@@ -24,7 +24,7 @@
 body {
   // min-height: 100%;
   // background-image: url('yarn.jpg');
-  text-align: center;
+  // text-align: center;
 
 }
 
@@ -59,9 +59,13 @@ html, body {
   -webkit-text-stroke: 1.6px #A6CFDE;
   -webkit-text-fill-color: #FFFFFF;
   text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 
 #home-btn {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   font-size: 400%;
   padding: 30px;
   width: 80%;
@@ -83,4 +87,12 @@ html, body {
 .handle {
   color: #CCC2CB;
   font-size: 60%;
+}
+
+input {
+  margin-bottom: 5px;
+}
+
+.btn {
+  margin-bottom: 5px;
 }

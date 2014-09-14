@@ -16,6 +16,7 @@ class PostsController < ApplicationController
         format.js
       end
       @post.text.scan(/#\w+/).each {|handle| @tagged_users << User.find_by(handle: handle) }
+      @tagged_users.reject!(&:blank?)
       @tagged_users.each { |user| UserMailer.tag_confirmation(user, @user).deliver }
     else
       flash.now.alert = "<strong>'Ey!</strong> Check dat again, mon."
