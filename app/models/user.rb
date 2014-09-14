@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name
   validates_presence_of :handle
+  after_create :welcome_mailer
+
+private
+  def welcome_mailer
+    UserMailer.signup_confirmation(self).deliver
+  end
 end
