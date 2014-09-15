@@ -4,8 +4,9 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
-Capybara.javascript_driver = :poltergeist
 require 'database_cleaner'
+
+Capybara.javascript_driver = :poltergeist
 DatabaseCleaner.strategy = :truncation
 # Add additional requires below this line. Rails is not loaded until this point!
 
