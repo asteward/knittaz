@@ -52,8 +52,26 @@ describe "the sign up process", :js => true do
     click_button 'search-btn'
     click_link '#test'
     click_link 'follow'
-    
     expect(page).to have_content 'unfollow'
+  end
+
+  it "follows another user" do
+    click_link 'Account'
+    click_link 'Logout'
+    click_link 'Account'
+    click_link 'Do you love to knit?'
+    fill_in 'Email', with: 'test2@test.com'
+    fill_in 'Name', with: 'test2'
+    fill_in 'Handle', with: '#test2'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_button 'Sign up'
+    fill_in 'search-term', with: "test"
+    click_button 'search-btn'
+    click_link '#test'
+    click_link 'follow'
+    click_link 'unfollow'
+    expect(page).to have_content 'follow'
   end
 
 end
