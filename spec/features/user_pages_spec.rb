@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the sign up process" do
+describe "the sign up process", :js => true do
   before :each do
     DatabaseCleaner.clean
     visit '/users/sign_up'
@@ -20,6 +20,14 @@ describe "the sign up process" do
   it "navigates to the user's page via the 'Ready to spin some yarns?' link" do
     click_link 'Ready to spin some yarns?'
     expect(page).to have_content '- yarns -'
+  end
+
+  it "creates a new post" do
+    click_link 'Ready to spin some yarns?'
+    click_link 'spin a new yarn'
+    fill_in 'post_text', with: 'New yarn'
+    click_button 'spin yarn'
+    expect(page).to have_content 'New yarn'
   end
 
 end
