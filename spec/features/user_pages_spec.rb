@@ -30,4 +30,11 @@ describe "the sign up process", :js => true do
     expect(page).to have_content 'New yarn'
   end
 
+  it "fails to create a new post if no text is input" do
+    click_link 'Ready to spin some yarns?'
+    click_link 'spin a new yarn'
+    click_button 'spin yarn'
+    expect(page).to have_content 'Spin Yarn Here'
+  end
+
 end
