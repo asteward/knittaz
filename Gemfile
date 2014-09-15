@@ -23,13 +23,14 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'capybara'
-  gem 'poltergeist'
+  gem 'pry'
 end
 
 group :test do
+  gem 'capybara'
+  gem 'poltergeist'
   gem 'shoulda-matchers'
-  gem 'factory_girl'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :production do
