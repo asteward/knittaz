@@ -6,6 +6,7 @@ describe "the sign up process" do
   end
 
   it "succeeds with a unique name, email, and password" do
+    DatabaseCleaner.clean
     fill_in 'Email', with: 'test@test.com'
     fill_in 'Name', with: 'test'
     fill_in 'Handle', with: '#test'
@@ -16,6 +17,7 @@ describe "the sign up process" do
   end
 
   it "fails without an email" do
+    DatabaseCleaner.clean
     fill_in 'Name', with: 'test'
     fill_in 'Handle', with: '#test'
     fill_in 'Password', with: 'password'
