@@ -17,4 +17,9 @@ describe "the sign up process" do
     expect(page).to have_content '- yarns -'
   end
 
+  it "navigates to the user's page via the 'Ready to spin some yarns?' link" do
+    click_link 'Ready to spin some yarns?'
+    expect(page).to have_content '- yarns -'
+  end
+
 end
