@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     resources :posts, only: [:new, :create]
-    resources :followers, only: [:create, :destroy]
+    resources :followers, only: [:new, :create, :destroy]
   end
 
   match('/search', { :via => :get, :to => 'users#search' } )
