@@ -2,9 +2,12 @@
 ###Authored by Austin Steward
 ***
 ##Description
-This rails web app is a functioning pseudo-clone of Twitter built for those in the knitting community. Users may "spin yarns" (i.e. "tweet") and follow other users. Users are sent emails when they sign up, are followed by another user, and when they are "stitched" (i.e. "tagged") in a post by another user.
+This rails web app is a basic functioning pseudo-clone of Twitter built for those in the knitting community. Users may "spin yarns" (i.e. "tweet") and follow other users. Users are sent emails when they sign up, are followed by another user, and when they are "stitched" (i.e. "tagged") in a post by another user.
 Users can search for other users using the navbar's `fuzzy_search` field.
-
+***
+##View on Heroku
+http://knittaz.herokuapp.com/
+Confirmation emails were removed for Heroku deployment.
 ***
 ##Setup
 In your terminal, clone this repo:
